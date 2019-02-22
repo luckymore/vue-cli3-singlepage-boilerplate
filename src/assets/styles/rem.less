@@ -1,0 +1,23 @@
+
+.init-rem() {
+.rem(@deviceWidth:375px) {
+  @media (min-width: @deviceWidth) {
+    //确定设计图的rem的大小
+    html {
+      font-size: round(@deviceWidth/3.75,2);
+    }
+  }
+}
+//320 360 375 384 400 414 424 480 540 720 750
+.rem(320px);
+.rem(360px);
+.rem(375px);
+.rem(384px);
+.rem(400px);
+.rem(414px);
+.rem(424px);
+.rem(480px);
+.rem(540px);
+.rem(720px);
+.rem(750px);
+}

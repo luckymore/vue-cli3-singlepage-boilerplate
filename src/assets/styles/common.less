@@ -1,0 +1,30 @@
+// 引入公共类
+@import url('./_variables.less');
+@import url('./reset-mobile.less');
+@import url('./mixins-mobile.less');
+@import url('./mixins.less');
+
+// 不需要执行、直接调用
+@import url('./border.less');
+@import url('./margin.less');
+@import url('./padding.less');
+@import url('./function.less');
+@import url('./rem.less');
+
+// 特殊字体引入
+// @import url('fontface/simsunFont/fontspire.less');
+// @import url('fontface/priceFont/fontprice.less');
+// @import url('fontface/whalePatIconfonts/iconfont.css');
+
+// 执行公共类
+.init-reset();
+.init-border();
+.init-margin(5,
+30,
+5);
+.init-padding(5,
+30,
+5);
+.init-rem();
+
+// 定义常用布局

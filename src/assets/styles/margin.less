@@ -1,0 +1,38 @@
+// 生成一定范围的margin原子类，参数：
+// @min: 最小值
+// @max: 最大值
+// @space: 间距
+.init-margin(@min: 0, @max: 100, @space: 5) {
+  // 递归生成margin
+  .build-margin(@count) when (@count >= @min) {
+      .build-margin((@count - @space));
+      
+      .mt@{count} {
+          margin-top: @count * 1px;
+      }
+      .mb@{count} {
+          margin-bottom: @count * 1px;
+      }
+      .mtb@{count} {
+          margin-top: @count * 1px;
+          margin-bottom: @count * 1px;
+      }
+      
+      .ml@{count} {
+          margin-left: @count * 1px;
+      }
+      .mr@{count} {
+          margin-right: @count * 1px;
+      }
+      .mlr@{count} {
+          margin-left: @count * 1px;
+          margin-right: @count * 1px;
+      }
+      
+      .ma@{count} {
+          margin: @count * 1px;
+      }
+  }
+  
+  .build-margin(@max);
+}

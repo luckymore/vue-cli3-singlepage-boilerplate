@@ -19,3 +19,7 @@ npm run build
 ```
 npm run lint
 ```
+
+## 常用功能
+
+- 部署 `WebpackScpUploadPlugin`

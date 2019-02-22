@@ -1,0 +1,38 @@
+// 生成一定范围的padding原子类，参数：
+// @min: 最小值
+// @max: 最大值
+// @space: 间距
+.init-padding(@min: 0, @max: 100, @space: 5) {
+  // 递归生成padding
+  .build-padding(@count) when (@count >= @min) {
+      .build-padding((@count - @space));
+
+      .pt-@{count} {
+          padding-top: @count * 1px;
+      }
+      .pb-@{count} {
+          padding-bottom: @count * 1px;
+      }
+      .ptb-@{count} {
+          padding-top: @count * 1px;
+          padding-bottom: @count * 1px;
+      }
+
+      .pl-@{count} {
+          padding-left: @count * 1px;
+      }
+      .pr-@{count} {
+          padding-right: @count * 1px;
+      }
+      .plr-@{count} {
+          padding-left: @count * 1px;
+          padding-right: @count * 1px;
+      }
+
+      .pa-@{count} {
+          padding: @count * 1px;
+      }
+  }
+
+  .build-padding(@max);
+}
