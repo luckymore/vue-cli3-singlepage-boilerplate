@@ -15,7 +15,7 @@ function addStyleResource() {
 
 // https://github.com/vuejs/vue-docs-zh-cn/blob/master/vue-cli/config.md
 module.exports = {
-  // 设置 / 才可以进行 prerender
+  // TODO: 设置 / 才可以进行 prerender
   publicPath: '//xinpincall.jd.com/www/vue-cli3/',
   outputDir: 'dist',
 
@@ -121,6 +121,37 @@ module.exports = {
       options.fileBlacklist.push([/myasyncRoute(.)+?\.js$/])
       return options
     })
+
+    // img资源路径，默认为相对路径，相对于link标签的herf
+    // if (!isM) {
+    //   config.plugin('html-pc').tap(args => {
+    //     args[0].minify = { removeComments: false, collapseWhitespace: true, removeAttributeQuotes: true, collapseBooleanAttributes: true, removeScriptTypeAttributes: true }
+    //     return args
+    //   })
+    // }
+
+    // if (isM) {
+    //   config.module
+    //     .rule('images')
+    //     .use('url-loader')
+    //     .tap(options => {
+    //       return merge(options, {
+    //         publicPath: BASEURL,
+    //         limit: 3000
+    //       })
+    //     })
+
+    //   config.module
+    //     .rule('svg')
+    //     .use('file-loader')
+    //     .tap(options => ((options.publicPath = BASEURL), options))
+    // }
+
+    // config.module
+    //   .rule('fonts')
+    //   .use('url-loader')
+    //   .tap(options => ((options.publicPath = BASEURL), options))
+
     // https://github.com/webpack-contrib/webpack-bundle-analyzer
     if (process.env.npm_config_report) {
       config.plugin('webpack-bundle-analyzer').use(require('webpack-bundle-analyzer').BundleAnalyzerPlugin)

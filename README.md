@@ -23,3 +23,8 @@ npm run lint
 ## 常用功能
 
 - 部署 `WebpackScpUploadPlugin`
+
+
+
+## 参考
+- [awesome-vue-cli3-example](https://github.com/nicejade/awesome-vue-cli3-example)
